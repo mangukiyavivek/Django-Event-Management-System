@@ -1,0 +1,40 @@
+<!-- events/templates/events/event_detail.html -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Event Detail: {{ event.name }}</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        h1 {
+            text-align: center;
+        }
+        .event-detail {
+            border: 1px solid #ccc;
+            padding: 20px;
+            background-color: #f9f9f9;
+        }
+        .event-detail p {
+            margin-bottom: 10px;
+        }
+        .actions {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Event Detail: {{ event.name }}</h1>
+    <div class="event-detail">
+        <p><strong>Description:</strong> {{ event.description }}</p>
+        <p><strong>Date:</strong> {{ event.date }}</p>
+        <p><strong>Location:</strong> {{ event.location }}</p>
+        <p><strong>Organizer:</strong> {{ event.organizer.username }}</p>
+        <div class="actions">
+            <a href="{% url 'event_list' %}" class="btn btn-primary">Back to Event List</a>
+        </div>
+    </div>
+</body>
+</html>
